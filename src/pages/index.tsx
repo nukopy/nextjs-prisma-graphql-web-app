@@ -1,8 +1,37 @@
-import { Inter } from 'next/font/google'
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Input,
+  useColorMode,
+  useColorModeValue,
+} from '@chakra-ui/react'
 import Head from 'next/head'
-import Image from 'next/image'
 
-const inter = Inter({ subsets: ['latin'] })
+const IndexPage = () => {
+  const { toggleColorMode } = useColorMode()
+  const formBackground = useColorModeValue('gray.100', 'gray.700')
+
+  return (
+    <Flex height="100vh" alignItems="center" justifyContent="center">
+      <Flex direction="column" background={formBackground} p={12} rounded={6}>
+        <Heading mb={6}>Log in</Heading>
+        <Input
+          placeholder="nukopy@gmail.com"
+          variant="filled"
+          mb={3}
+          type="email"
+        />
+        <Input placeholder="********" variant="filled" mb={6} type="password" />
+        <Button mb={6} colorScheme="teal">
+          Log in{' '}
+        </Button>
+        <Button onClick={toggleColorMode}>Toggle Color Mode</Button>
+      </Flex>
+    </Flex>
+  )
+}
 
 export default function Home() {
   return (
@@ -14,102 +43,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div>
-          <p>
-            Get started by editing&nbsp;
-            <code>src/pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
-
-        <div>
-          <Image
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
+        <IndexPage />
       </main>
     </>
   )
