@@ -5,7 +5,7 @@
 ## 注意
 
 - 書籍では、パッケージ管理に yarn を使用しているが、本リポジトリでは npm を使用している
-- 書籍では、UI フレームワークに [Tailwind CSS](https://tailwindcss.com/) を使用しているが、本リポジトリでは [Chakra UI](https://chakra-ui.com/) を使用している
+- 書籍では、UI の装飾に CSS フレームワーク [Tailwind CSS](https://tailwindcss.com/) を使用しているが、本リポジトリでは UI コンポーネントライブラリ [Chakra UI](https://chakra-ui.com/)を使用している
 
 ## 成果物
 
